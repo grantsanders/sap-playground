@@ -6,9 +6,9 @@ namespace sap_playground.Controllers;
 [Route("[controller]")]
 public class CurlRequestController : ControllerBase
 {
-    private static readonly string[] Summaries = new[]
+    private static readonly string[] Names = new[]
     {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+        "JB", "Kenny", "Aaron", "Charlie"
     };
 
     private readonly ILogger<CurlRequestController> _logger;
@@ -21,7 +21,10 @@ public class CurlRequestController : ControllerBase
     [HttpGet(Name = "GetCurl")]
     public string Get()
     {
-        return "";
+        Random rnd = new();
+        int num = rnd.Next(0, Names.Length);
+        string responseMessage = $"aye what up {Names[num]} this message is coming to you live from the orb";
+        return responseMessage;
     }
 }
 
