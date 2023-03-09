@@ -23,7 +23,7 @@ public class CurlRequestController : ControllerBase
     {
         Random rnd = new();
         int num = rnd.Next(0, Names.Length);
-        string responseMessage = $"aye what up {Names[num]} this message is coming to you live from the orb";
+        string responseMessage = $"aye what up {Names[num]} this message is coming to you live from the orb\n";
         return responseMessage;
     }
 }
